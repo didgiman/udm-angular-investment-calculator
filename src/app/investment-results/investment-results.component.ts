@@ -1,9 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
-
-interface YearData {
-
-}
+import { Component } from '@angular/core';
+import { InvestmentService } from '../investment.service';
 
 @Component({
   selector: 'app-investment-results',
@@ -13,12 +10,7 @@ interface YearData {
   styleUrl: './investment-results.component.css'
 })
 export class InvestmentResultsComponent {
-  @Input() anualData?: {
-    year: number;
-    interest: number;
-    valueEndOfYear: number;
-    annualInvestment: number;
-    totalInterest: number;
-    totalAmountInvested: number;
-  }[];
+  constructor(private investmentService: InvestmentService) {}
+
+  annualData = this.investmentService.result;
 }
