@@ -12,5 +12,7 @@ import { InvestmentService } from '../investment.service';
 export class InvestmentResultsComponent {
   constructor(private investmentService: InvestmentService) {}
 
-  annualData = this.investmentService.result;
+  get annualData() {
+    return this.investmentService.resultData;
+  }
 }

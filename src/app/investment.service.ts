@@ -43,9 +43,4 @@ export class InvestmentService {
     // return annualData;
     this.resultData = annualData;
   }
-
-  get result() {
-    console.log(this.resultData);
-    return this.resultData;
-  }
 }
